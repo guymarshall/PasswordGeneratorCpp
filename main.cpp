@@ -25,6 +25,9 @@ std::string generatePassword(int length)
 
 int main(int argc, char const *argv[])
 {
+    std::cout << "Enter number of characters: ";
+    int numberOfCharacters;
+    std::cin >> numberOfCharacters;
     return 0;
 }
 
