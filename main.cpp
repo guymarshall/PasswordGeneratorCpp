@@ -6,24 +6,27 @@ int main(int argc, char const *argv[])
     return 0;
 }
 
-// public static String generatePassword(String[] characters, int number) {
-//     int counter = 0;
-//     StringBuilder password = new StringBuilder();
+std::string generatePassword(int length)
+{
+    char characters[] = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '!', '\'', '£', '$', '%', '^', '&', '*', '(', ')', '-', '_', '=', '+', '[', '{', ']', '}', ';', ':', '"', '@', '#', '~', ',', '<', '.', '>', '/', '?'};
 
-//     Random random = new Random();
+    int counter = 0;
+    std::string password = "";
 
-//     while (counter < number) {
-//         //percentage print out
-//         double percentageProgress = ((double)counter / (double)number * 100.0) + 1.0;
-//         if (percentageProgress % 1 == 0) {
-//             System.out.printf("%d%% complete.\n", (int)percentageProgress);
-//         }
-//         password.append(characters[Math.round(random.nextInt(characters.length))]);
-//         counter++;
-//     }
+    while (counter < length)
+    {
+        int percentageProgress = ((double)counter / (double)length * 100.0) + 1.0;
+        if (percentageProgress % 1 == 0)
+        {
+            std::cout << percentageProgress << " complete." << std::endl;
+        }
+        // password.append(characters[Math.round(random.nextInt(characters.length))]); // in case it doesn't work
+        password += characters[rand() % strlen(characters)];
+        counter++;
+    }
 
-//     return password.toString();
-// }
+    return password;
+}
 
 // public static void main(String[] args) {
 //     System.out.print("Enter number of characters: ");
