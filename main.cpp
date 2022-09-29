@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 
 std::string generatePassword(int length)
@@ -33,9 +34,20 @@ int main(int argc, char const *argv[])
     std::string password = generatePassword(numberOfCharacters);
 
     std::cout << "Saving password to file..." << std::endl;
-    // write try catch here
+    std::ofstream out("password.txt");
 
-    return 0;
+    if (out)
+    {
+        out << password;
+        out.close();
+        std::cout << "Password has been saved to file." << std::endl;
+        return 0;
+    }
+    else
+    {
+        std::cout << "An error occurred." << std::endl;
+        return 1;
+    }
 }
 
 // try {
