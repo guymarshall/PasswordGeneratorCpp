@@ -28,6 +28,13 @@ int main(int argc, char const *argv[])
     std::cout << "Enter number of characters: ";
     int numberOfCharacters;
     std::cin >> numberOfCharacters;
+
+    std::cout << "Generating random password..." << std::endl;
+    std::string password = generatePassword(numberOfCharacters);
+
+    std::cout << "Saving password to file..." << std::endl;
+    // write try catch here
+
     return 0;
 }
 
