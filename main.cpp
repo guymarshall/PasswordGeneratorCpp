@@ -2,6 +2,7 @@
 #include <fstream>
 #include <string>
 #include <cstring>
+#include <cmath>
 
 std::string generatePassword(int length)
 {
@@ -12,8 +13,8 @@ std::string generatePassword(int length)
 
     while (counter < length)
     {
-        int percentageProgress = ((double)counter / (double)length * 100.0) + 1.0;
-        if (percentageProgress % 1 == 0)
+        double percentageProgress = ((double)counter / (double)length * 100.0) + 1.0;
+        if (std::fmod(percentageProgress, 1) == 0)
         {
             std::cout << percentageProgress << " complete." << std::endl;
         }
