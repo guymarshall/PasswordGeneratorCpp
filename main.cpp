@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <cstring>
 
 std::string generatePassword(int length)
 {
@@ -17,7 +18,7 @@ std::string generatePassword(int length)
             std::cout << percentageProgress << " complete." << std::endl;
         }
         // password.append(characters[Math.round(random.nextInt(characters.length))]); // in case it doesn't work
-        password += characters[rand() % strlen(characters)];
+        password += characters[rand() % std::strlen(characters)];
         counter++;
     }
 
