@@ -49,13 +49,3 @@ int main(int argc, char const *argv[])
         return 1;
     }
 }
-
-// try {
-//     FileWriter myWriter = new FileWriter("password.txt");
-//     myWriter.write(password);
-//     myWriter.close();
-//     System.out.println("Password has been saved to file.");
-// } catch (IOException e) {
-//     System.out.println("An error occurred.");
-//     e.printStackTrace();
-// }
